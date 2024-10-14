@@ -2,24 +2,21 @@
 using namespace std; 
 class Solution {
 public:
-    bool isValid(string s) {   
-        stack<int> st; 
-        unordered_map<int,int> mp = {
+    bool isValid(string s) {  
+        stack<char> st; 
+        unordered_map<char,char> mp = { 
             {')','('},
             {'}','{'},
-            {']','['},
-        }; 
-        for(auto it : s){   
-            // check closing
+            {']','['}
+        };
+        for(char it : s){  
             if(mp.find(it) != mp.end()){
-                // check top value  = key value of it  
-                if(!mp.empty() && st.top() == mp[it]){  
+                if(!st.empty() && st.top() == mp[it]){  
                     st.pop();
                 } else { 
                     return false;
                 }
-            } else {
-                // push openning
+            } else { 
                 st.push(it);
             }
         }
