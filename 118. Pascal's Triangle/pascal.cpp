@@ -15,7 +15,6 @@ public:
             for(int j = 1; j < p[i].size() - 1; j++){
                 p[i][j] = p[i - 1][j - 1] + p[i - 1][j];  
              }
-        }
-        return p;
+        } 
     }
 };
