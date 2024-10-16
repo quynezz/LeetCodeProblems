@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> getRow(int rowIndex) {
         vector<vector<int>> p(rowIndex + 1);
-        if(rowIndex>= 0){  
+        if(rowIndex >= 0){  
             p[0] = {1};
         }
         for(int i = 1; i <= rowIndex; i++){  
