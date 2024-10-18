@@ -18,7 +18,7 @@ public:
                 int left = j + 1;
                 int right = n - 1;
                 while(left < right){
-                    int sum = nums[i] + nums[j] + nums[left] + nums[right];
+                    long long sum = (long long)nums[i] + nums[j] + nums[left] + nums[right];
                     if(sum == target){
                         result.push_back({nums[i],nums[j],nums[left],nums[right]});
                         while(left < right && nums[left] == nums[left + 1]){
