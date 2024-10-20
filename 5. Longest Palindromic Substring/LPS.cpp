@@ -27,4 +27,3 @@ public:
         return longest;
     }
 };
-// q
