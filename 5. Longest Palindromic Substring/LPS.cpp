@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
 private:
     string expandCenter(string s, int l, int r) { 
@@ -10,6 +7,7 @@ private:
         }
         return s.substr(l + 1, r - l - 1);
     }
+
 public:
     string longestPalindrome(string s) {
         string longest = "";
@@ -29,3 +27,4 @@ public:
         return longest;
     }
 };
+// q
