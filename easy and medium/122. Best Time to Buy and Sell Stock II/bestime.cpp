@@ -6,8 +6,7 @@ public:
             if(prices[i] > prices[i + 1]){ 
                 continue;
             }
-            int temp = prices[i + 1] - prices[i];
-            stock += temp;
+            stock += prices[i + 1] - prices[i];;
         }
         return stock;
     }
