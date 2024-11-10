@@ -13,8 +13,8 @@ public:
         }
         return count;
     }
-    // 1 (0 0    0    1)
+    // 1 (0  0    0    1)
     // same dif same dif => 2 dif => ans = 2;
-    // 4 (0 1    0    0)
+    // 4 (0  1    0    0)
 
 };
