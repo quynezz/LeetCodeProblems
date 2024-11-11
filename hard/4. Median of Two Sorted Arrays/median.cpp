@@ -15,6 +15,8 @@ public:
             temp = nums1[mid];
         } else {
          temp = ((float(nums1[mid]) + float(nums1[mid + 1])) / 2 ) ;
+        //  temp = nums1[mid] +nums1[mid + 1] / 2.0 ) ;
+          
         }
         return temp;
     }
