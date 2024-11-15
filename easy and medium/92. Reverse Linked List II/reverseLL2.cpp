@@ -21,4 +21,4 @@ public:
         temp->next = prev;
         return dummy->next;
     }
-};
+}
