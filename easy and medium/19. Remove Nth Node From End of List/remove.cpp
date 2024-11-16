@@ -21,20 +21,14 @@ public:
             delete head;
             return newHead;
         } 
-
         ListNode* temp = head; 
-        ListNode* prev = NULL;  
-
-        for (int i = 0; i < (k - n); i++) {   
+        ListNode* prev = head;  
+        for (int i = 1; i < (k - n) + 1; i++) {   
             prev = temp; 
             temp = temp->next;
         }
-
-     
-        if (prev != NULL && temp != NULL) { 
             prev->next = temp->next; 
             delete temp; 
-        }
         return head; 
     }
 };
