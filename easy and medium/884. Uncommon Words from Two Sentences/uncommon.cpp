@@ -14,7 +14,7 @@ public:
             if(fre == 1){
                 v.push_back(word);
             }
-        }
+        } 
         return v;
     }
 };
