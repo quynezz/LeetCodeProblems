@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool findSubarrays(vector<int>& nums) {
+        unordered_map<int,int> m;
+        for(int i = 0; i < nums.size() - 1; i++){
+            int temp = nums[i] + nums[i + 1];
+            m[temp]++;
+        }
+        for(auto& [num , fre] : m){
+            if(fre > 1){
+                return true;
+            }
+        }
+        return false;
+    }
+};
