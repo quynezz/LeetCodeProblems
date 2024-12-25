@@ -43,6 +43,7 @@ public:
                     if(temp == -1){
                         temp = cur->val;
                     }else if(temp != -1){
+                    // node->val should be odd
                         if(cur->val <= temp || cur->val % 2 == 0){
                             return false;
                         }else{
@@ -55,6 +56,7 @@ public:
                 if(temp % 2 == 0){
                     return false;
                 }
+                // odd
             } else if(level % 2 != 0){
                 for(int i = 0; i < lv; i++){
                 TreeNode* cur = q.front();
@@ -62,6 +64,7 @@ public:
                 if(temp == -1){
                     temp = cur->val;
                 }else if(temp != -1){
+                    // node->val should be even
                     if(cur->val >= temp || cur->val % 2 != 0){
                         return false;
                     }else{
