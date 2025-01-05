@@ -9,22 +9,37 @@ const int MOD = 1e9;
 
 class Solution {
 public:
-    int uniquePaths(int m, int n) {
-        // Create a DP table with dimensions m x n
-        vector<vector<int>> dp(m, vector<int>(n, 0));
-
-        // Initialize the first row and the first column
-        for (int i = 0; i < m; i++) dp[i][0] = 1;  // Only one way to move down
-        for (int j = 0; j < n; j++) dp[0][j] = 1;  // Only one way to move right
-
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];  // Paths from above + left
+    int countSubstrings(string& s) {
+        int count = 0;
+        vector<vector<bool>> dp(s.size(),vector<bool>(s.size(),false));
+        // check length 1; 
+        for(int i = 0; i < s.size(); i++){
+            dp[i][i] = true;
+            // check length 2;
+            count++;
+        }
+        for(int i = 0; i < s.size() - 1; i++){
+            if(s[i] == s[i + 1]){
+                dp[i][i + 1] = true;
+                count++;
             }
         }
-        return dp[m - 1][n - 1];
+        // check length 3; 
+        for(int length = 3; length <= s.size(); length++){
+            for(int i = 0; i <= s.size() - length; i++){
+                // 0 + 3 - 1;
+                int j = i + length - 1;
+                if(dp[i + 1][j - 1] && s[i] == s[j]){
+                    dp[i][j] = true;
+                    count++;
+                }
+            }
+        }
+        // cout << count << endl;
+        return count;
     }
 };
+
 auto speedup = []() {
     ios::sync_with_stdio(0);
     cin.tie(0);
@@ -33,7 +48,9 @@ auto speedup = []() {
 }();
 
 // int main(){
+//     string temp = "acbca";
+//     vector<string> v;
 //     Solution s;
-//     s.uniquePaths(3,7);
+//     s.countSubstrings(temp);
 //     return 0;    
 // }
