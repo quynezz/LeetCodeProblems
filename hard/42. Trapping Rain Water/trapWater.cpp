@@ -64,4 +64,5 @@ auto speedup = []() {
 //     Solution s;
 //     s.trap(temp);
 //     return 0;    
+
 // }
