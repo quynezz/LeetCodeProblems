@@ -17,16 +17,13 @@ public:
         if(k > s.size()) return false;
         unordered_map<char,int> m;
         int countOdd = 0;
-        bool flag = false;
         for(int i = 0; i < s.size(); i++) m[s[i]]++;
         for(auto& it : m){
             if(it.second % 2 != 0){
                 countOdd++;
             }
         }
-         countOdd > k ? flag = false : flag = true;
-         cout << static_cast<bool>(flag) << endl;
-         return flag;
+        return countOdd > k ? false : true;
     }
 };
 
