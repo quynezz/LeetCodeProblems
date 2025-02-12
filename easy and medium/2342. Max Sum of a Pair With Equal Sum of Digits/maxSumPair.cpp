@@ -24,14 +24,13 @@ class Solution {
                 } 
             }
             if(find == false) return -1;
-            int max1 = 0;
             for(auto it : s){
                 int num1 = m[it].top();
                 m[it].pop();
                 int num2 = m[it].top();
                 m[it].pop();
-                max1 = max(max1,(num1+num2));
+                maxN = max(maxN,(num1+num2));
             }
-            return max1;
+            return maxN;
         }
     };
