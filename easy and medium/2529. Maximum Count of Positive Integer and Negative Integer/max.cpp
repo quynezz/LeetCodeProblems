@@ -1,15 +1,14 @@
 class Solution {
-public:
-    int maximumCount(vector<int>& nums) {
-        int cP = 0; 
-        int cN = 0;
-        for(auto it : nums){
-            if(it == 0){
-                continue;
-            }else{
-            it > 0 ? cP++ : cN++;
+    public:
+        int maximumCount(vector<int>& nums) {
+          int nega = 0, posi = 0; 
+          for(auto it : nums) {
+            if(it > 0){
+                posi++;
+            }else if(it < 0){
+                nega++;
             }
+          }        
+          return max(nega,posi);
         }
-        return max(cP,cN);
-    }
-};
+    };
