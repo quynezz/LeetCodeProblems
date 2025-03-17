@@ -1,18 +1,16 @@
 class Solution {
-public:
-    bool divideArray(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        int count = 1;
-        for(int i = 0; i < nums.size() - 1; i++){
-            if(nums[i] == nums[i + 1]){
-                count++;
-            }else{
-                if(count % 2 != 0){
-                    return false;
+    public:
+        bool divideArray(vector<int>& nums) {
+            int n = nums.size() / 2;
+            int count = 0;
+            unordered_map<int,int> m;
+            for(auto it : nums) m[it]++;
+            for(auto& [ num , fre] : m){
+                if(fre >= 2) {
+                    count += fre / 2;
                 }
-                count = 1;
             }
+            cout << count << " " << n << endl;
+            return count == n;
         }
-        return true;
-    }
-};
+    };
