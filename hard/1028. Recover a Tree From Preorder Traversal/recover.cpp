@@ -12,8 +12,9 @@
 class Solution {
 public:
     TreeNode* recoverFromPreorder(string traversal) {
-        stack<TreeNode*> st; 
+        stack<TreeNode*> st;
         int index = 0;
+        // backkkkk
         while(index < traversal.size()){
             int depth = 0;
             while(index < traversal.size() && traversal[index] == '-'){
@@ -22,7 +23,7 @@ public:
             }
             while(st.size() > depth){
                 st.pop();
-            }       
+            }
             int value = 0;
             while(index < traversal.size() && isdigit(traversal[index])){
                 value = value * 10 + (traversal[index] - '0');
